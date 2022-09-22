@@ -16,6 +16,8 @@ body {
 
 .leaflet-popup-content-wrapper {
     background-color: #fff;
-    color: #000;
-    border-radius: 0px;
+    color: #2D11A1;
+    border-radius: 10px;
+    width: 300px;
+    height: 400px;
 }

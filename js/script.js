@@ -61,10 +61,19 @@ var myIcon = L.icon({
 });
 
 var singleMarker = L.marker([53.20139, 5.80859], { icon: myIcon });
-var popup = singleMarker.bindPopup('lekker op de strun ').openPopup()
+var popup = singleMarker.bindPopup('lekker op de strun yn Ljouwert').openPopup()
 popup.addTo(map);
 
 var secondMarker = L.marker([53.20139, 5.80859], { icon: myIcon });
+
+map.on('click',function(e){
+    lat = e.latlng.lat;
+    lon = e.latlng.lng;
+
+    //Add a marker to show where you clicked.
+     theMarker = L.marker([lat,lon], {icon: myIcon}).addTo(map). bindPopup("<h2>John Doe</h2> <h3>beschrijving</h3> <p>Ik voel me sterk verbonden met de Friese geschiedenis, met de geschiedenis die dicht bij mij ligt. Soms letterlijk onder mijn voeten, terwijl ik door de landerijen loopen nieuwe scherven vind voor mijn verzameling archeologische vondsten. Het idee dat anderen al generaties lang voor mij op dezelfde grondliepen, met al hunellendeen leven, werkt troostend en verbindend. Het relativeert en inspireert.</p>"); 
+      
+});
 
 console.log(singleMarker.toGeoJSON())
 
